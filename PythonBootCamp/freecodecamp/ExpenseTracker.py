@@ -25,7 +25,7 @@ def filter_expenses_by_category(expenses, category):
 def _main_():
     expenses = []
     while True:
-        print('\nEnpense Tracker')
+        print('\nExpense Tracker')
         print('1. Add an expense: ')
         print('2. List all expenses: ')
         print('3. Show total expenses: ')
