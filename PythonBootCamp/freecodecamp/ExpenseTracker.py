@@ -6,7 +6,6 @@ In this project, you're going to build a simple, yet functional expense tracker 
 3. Define a function named total_expenses that takes one parameter expenses.
 4. Within the filter_expenses_by_category function. Use expense as the parameter and evaluate the comparison between the value of the 'category' key of the expense dictionary and category using the equality operator.
 5. Define a function named main without parameters. Fill the function body with the expenses list you created at the beginning of this project. You will use this list to store the expense records.
-    -
 '''
 
 def add_expense(expenses, amount, category):
@@ -45,9 +44,14 @@ def _main_():
             category = input('\nEnter category to filter: ')
             print(f'Expenses for {category}: ')
             output = filter_expenses_by_category(expenses, category)
-            print_expenses(output)
+            if len(list(output))==0:
+                print('---- Invalid category: '+category)
+            else:
+                print_expenses(output)
         elif choice == '5':
             print('Exiting the program.')
             break
         else:
             raise ValueError(f'Invalid choice: ${choice}')
+
+_main_()
